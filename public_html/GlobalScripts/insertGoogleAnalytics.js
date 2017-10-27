@@ -1,5 +1,6 @@
 // Global site tag (gtag.js) - Google Analytics 
 // (modified for use in a single external script by Technostalgic Games)
+// tracking number: UA-108782136-1
 
 var headALTCS = document.getElementsByTagName('head')[0];
 var scriptALTCS = document.createElement('script');
