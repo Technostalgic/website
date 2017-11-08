@@ -1,22 +1,19 @@
 body{
-	background-color: #333;
+	background-color: #444;
 	font-family: Courier New;
 	font-size: 16;
 	text-align: center;
 	color: #3F3;
 	text-shadow: 0px 0px 10px #0F0;
 	
-	padding: 20px;
+	margin: 0px;
+	padding: 30px;
 }
 
 p{
-	background-color: #555;
-	outline: 1px solid #AAA;
-	box-shadow: 0px 0px 20px #fff;
+	text-align: left;
 	
 	max-width: 1200px;
-	padding: 10px;
-	padding-bottom: 20px;
 	margin: 10px auto;
 }
 
@@ -48,7 +45,18 @@ a:hover{
 .squish_FullWidth{
 	max-width: 100%;
 }
-.pHeadline{
+.block{
+	background-color: rgba(0,0,0,0.5);
+	outline: 1px solid #AAA;
+	box-shadow: 0px 0px 20px #fff;
+	text-align: left;
+	
+	max-width: 1200px;
+	padding: 10px;
+	margin: 10px auto;
+	margin-bottom: 30px;
+}
+.blockHeadline{
 	width: auto;
 	display: block;
 	color: #AFA;
@@ -56,5 +64,15 @@ a:hover{
 	font-weight: bold;
 	text-shadow: 0px 0px 15px #AFA;
 	
-	margin: 10px 10px;
+	margin: 10px 30px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+.blockBody{
+	padding: 0px 0px;
+	padding-top: 5px;
+	padding-left: 10px;
+	margin: 10px 30px;
+	margin-top: 0px;
+	border-left: 2px solid #AFA;
 }
