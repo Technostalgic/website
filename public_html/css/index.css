@@ -1,0 +1,19 @@
+body{
+	font-family: Courier New;
+	font-size: 16;
+	text-align: center;
+	color: #7F7;
+	background-color: #333;
+}
+
+a{
+	font-weight: bold;
+	color: #F73;
+}
+a:visited{
+	color: #B84;
+}
+a:hover{
+	color: #FFF;
+	font-weight: normal;
+}
