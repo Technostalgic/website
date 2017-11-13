@@ -40,6 +40,30 @@ a:hover{
 	width: 800px;
 }
 
+.tabContainer{
+	z-index: 0;
+	margin-left: 10%;
+}
+.tabContainer ul > a > li{
+	background-color: rgba(255, 255, 0, 0.6);
+	display: inline-block;
+	border: 2px solid #FF0;
+	border-bottom-color: rgba(0, 0, 0, 0.6);
+	color: #000;
+	
+	padding: 10px;
+	margin: 20px;
+	margin-bottom: -2.5px;
+}
+.tabContainer ul{
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+.tabContainer ~ div{
+	margin-top: 0px;
+}
+
 .headItem{
 	background-color: transparent;
 	max-width: none;
@@ -48,6 +72,12 @@ a:hover{
 	max-width: 100%;
 }
 .blockContainer{
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 2px solid #FFF;
+	z-index: -1;
+	
+	max-width: 1260px;
+	margin: 0px auto;
 	padding: 10px 30px;
 }
 .block{
@@ -89,3 +119,4 @@ a:hover{
 	margin-top: 0px;
 	margin-bottom: 10px;
 }
+
