@@ -41,24 +41,41 @@ a:hover{
 }
 
 .tabContainer{
-	z-index: 0;
+	z-index: 1;
 	margin-left: 10%;
+	font-size: 0;
 }
 .tabContainer ul > a > li{
-	background-color: rgba(255, 255, 0, 0.6);
+	background-color: rgba(255, 255, 255, 0.2);
 	display: inline-block;
-	border: 2px solid #FF0;
-	border-bottom-color: rgba(0, 0, 0, 0.6);
-	color: #000;
+	border: 1px solid #FFF;
+	border-bottom-color: #FFF;
+	color: #FFF;
+	font-size: 20px;
+	font-weight: normal;
+	
+	min-width: 10%;
 	
 	padding: 10px;
-	margin: 20px;
+	padding-top: 5px;
+	margin: 0px;
 	margin-bottom: -2.5px;
 }
+.tabContainer ul > a .selected{
+	background-color: rgba(255, 255, 255, 0.4);
+	border: 2px solid #FFF;
+	border-bottom-color: rgba(0, 0, 0, 0.6);
+	font-size: 22px;
+	font-weight: bold;
+	
+	padding: 10px;
+	margin-bottom: -2.5px;
+}
+
 .tabContainer ul{
 	text-align: left;
 	margin: 0px;
-	padding: 0px;
+	padding: 0px 20px;
 }
 .tabContainer ~ div{
 	margin-top: 0px;
