@@ -1,6 +1,5 @@
 body{
 	background-color: #444;
-	//background-image: url("./textures/background.gif");
 	background-attachment: fixed;
 	font-family: Courier New;
 	font-size: 16;
@@ -38,9 +37,11 @@ a:hover{
 
 .tabContainer{
 	z-index: 1;
-	margin: auto;
 	font-size: 0;
+	
 	max-width: 1260px;
+	
+	margin: auto;
 }
 .tabContainer ul > a > li{
 	background-color: rgba(255, 255, 255, 0.2);
@@ -68,9 +69,9 @@ a:hover{
 	padding: 10px;
 	margin-bottom: -2.5px;
 }
-
 .tabContainer ul{
 	text-align: left;
+	
 	margin: 0px;
 	padding: 0px 20px;
 }
@@ -80,17 +81,19 @@ a:hover{
 
 .headLogo{
 	background-color: transparent;
+	
 	max-width: none;
 }
 .squish_FullWidth{
 	max-width: 100%;
 }
 .blockContainer{
+	z-index: -1;
 	background-color: rgba(255, 255, 255, 0.2);
 	border: 2px solid #FFF;
-	z-index: -1;
 	
 	max-width: 1260px;
+	
 	margin: 0px auto;
 	padding: 10px 30px;
 }
@@ -98,23 +101,24 @@ a:hover{
 	background-color: rgba(0,0,0,0.5);
 	outline: 1px solid #AAA;
 	box-shadow: 0px 0px 20px #fff;
-	
 	color: #0F0;
 	text-shadow: 0px 0px 5px #0F0, 0px 0px 5px #0F0;
 	text-align: left;
 	
 	max-width: 1200px;
+	
 	padding: 10px;
 	margin: 10px auto;
 	margin-bottom: 30px;
 }
 .blockHeadline{
-	width: auto;
 	display: block;
 	color: #AFA;
 	font-size: 24px;
 	font-weight: bold;
 	text-shadow: 0px 0px 15px #AFA;
+	
+	width: auto;
 	
 	padding-bottom: 0px;
 	margin: 10px 30px;
@@ -122,12 +126,13 @@ a:hover{
 	margin-bottom: 0px;
 }
 .blockBody{
+	border-left: 2px solid #AFA;
+	
 	padding: 0px 0px;
 	padding-top: 5px;
 	padding-left: 10px;
 	margin: 10px 30px;
 	margin-top: 0px;
-	border-left: 2px solid #AFA;
 }
 .blockBody p{
 	margin-top: 0px;
