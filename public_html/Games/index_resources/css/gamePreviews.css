@@ -1,0 +1,53 @@
+.gamePreviewList{
+	list-style: none;
+}
+
+.gamePreview_title{
+	
+}
+.gamePreview_thumb{
+	display: block;
+	float: left;
+	vertical-align: middle;
+	
+	outline: 1px solid white;
+	width: 150px;
+	height: 150px;
+	margin: 5px 5px;
+	padding: 0;
+}
+.gamePreview_thumbAnim{
+	display: none;
+	float: left;
+	vertical-align: middle;
+	
+	outline: 1px solid white;
+	width: 150px;
+	height: 150px;
+	margin: 5px 5px;
+	padding: 0;
+}
+
+.gamePreview{
+	background-color: rgba(0,0,0,0.5);
+	outline: 1px solid #AAA;
+	box-shadow: 0px 0px 20px #FFF;
+	font-weight: normal;
+	color: #0F0;
+	text-shadow: 0px 0px 5px #0F0, 0px 0px 5px #0F0;
+	overflow: hidden;
+	
+	height: 160px;
+	
+	padding: 5px;
+	margin: 10px;
+}
+.gamePreview:hover{
+	
+}
+.gamePreview:hover .gamePreview_thumb{
+	display: none;
+}
+.gamePreview:hover .gamePreview_thumbAnim{
+	display: block;
+}
