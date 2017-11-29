@@ -3,29 +3,72 @@
 }
 
 .gamePreview_title{
+	display: block;
+	color: #AFA;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 0px 0px 15px #AFA;
 	
+	margin: 20px;
+	margin-bottom: 0;
+}
+.gamePreview_highScore{
+	color: #AAA;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0px 0px 15px #FFF;
+	line-height: 5px;
+}
+.gamePreview_description{
+	display: block;
+	
+	margin-top: 10px;
+}
+.gamePreview_thumbContainer{
+	display: block;
+	line-height: 120px;
+	float: left;
+	
+	width: 150px;
+	height: 150px;
+	margin: 10px 10px;
+	padding: 0;
 }
 .gamePreview_thumb{
-	display: block;
+	display: inline-block;
 	float: left;
-	vertical-align: middle;
 	
 	outline: 1px solid white;
 	width: 150px;
 	height: 150px;
-	margin: 5px 5px;
+	margin: 0;
 	padding: 0;
 }
 .gamePreview_thumbAnim{
 	display: none;
 	float: left;
-	vertical-align: middle;
 	
 	outline: 1px solid white;
 	width: 150px;
 	height: 150px;
-	margin: 5px 5px;
+	margin: 0;
 	padding: 0;
+}
+
+.gamePreview_controlContainer{
+	position: relative;
+	display: block;
+	float: right;
+	
+	height: 150px;
+	margin: 10px;
+}
+.gamePreview_controlPlay{
+	
+}
+.gamePreview_controlFavorite{
+	position: absolute;
+	bottom: 0;
 }
 
 .gamePreview{
@@ -34,10 +77,9 @@
 	box-shadow: 0px 0px 20px #FFF;
 	font-weight: normal;
 	color: #0F0;
+	
 	text-shadow: 0px 0px 5px #0F0, 0px 0px 5px #0F0;
 	overflow: hidden;
-	
-	height: 160px;
 	
 	padding: 5px;
 	margin: 10px;
@@ -50,4 +92,11 @@
 }
 .gamePreview:hover .gamePreview_thumbAnim{
 	display: block;
+}
+
+.gamePreview hr{
+	border: none;
+	outline: none;
+	background-color: #AFA;
+	height: 2px;
 }
