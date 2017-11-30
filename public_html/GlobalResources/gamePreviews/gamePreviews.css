@@ -1,0 +1,161 @@
+.gamePreviewList{
+	list-style: none;
+}
+
+.gamePreview_title{
+	display: block;
+	color: #AFA;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 0px 0px 15px #AFA;
+	
+	margin: 20px;
+	margin-bottom: 0;
+}
+.gamePreview_highScore{
+	color: #AAA;
+	font-size: 12px;
+	font-weight: bold;
+	text-shadow: 0px 0px 15px #FFF;
+	line-height: 5px;
+}
+.gamePreview_description{
+	display: block;
+	
+	margin-top: 10px;
+}
+.gamePreview_thumbContainer{
+	display: block;
+	line-height: 120px;
+	float: left;
+	
+	width: 150px;
+	height: 150px;
+	margin: 10px 10px;
+	padding: 0;
+}
+.gamePreview_thumb{
+	display: inline-block;
+	float: left;
+	
+	outline: 1px solid white;
+	width: 150px;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+}
+.gamePreview_thumbAnim{
+	display: none;
+	float: left;
+	
+	outline: 1px solid white;
+	width: 150px;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+}
+
+.gamePreview_controlContainer{
+	text-align: center;
+	position: relative;
+	display: block;
+	float: right;
+	border-left: 1px solid #AFA;
+	box-shadow: -10px 0px 20px -10px #FFF;
+	
+	min-width: 60px;
+	
+	height: 150px;
+	margin: 10px;
+}
+.gamePreview_controlPlay{
+	overflow: hidden;
+	background-color: #050;
+	color: #0F0;
+	font-size: 52px;
+	text-shadow: none;
+	border: 1px solid #0F0;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #0F0;
+	
+	width: 50px;
+	height: 60px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.gamePreview_controlPlay:hover{
+	text-shadow: 0 0 10px #0F0;
+}
+.gamePreview_controlFavorite{
+	overflow: hidden;
+	background-color: #550;
+	color: #FF0;
+	text-shadow: none;
+	border: 1px solid #FF0;
+	border-radius: 4px;
+	line-height: 22px;
+	box-shadow: 0 0 10px #FF0;
+	
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 8px;
+	cursor: pointer;
+}
+.gamePreview_controlFavorite:hover{
+	text-shadow: 0 0 10px #FF0;
+}
+.gamePreview_controlSettings{
+	overflow: hidden;
+	background-color: #333;
+	font-weight: bold;
+	color: #AAA;
+	text-shadow: none;
+	border: 1px solid #AAA;
+	border-radius: 4px;
+	line-height: 25px;
+	box-shadow: 0 0 10px #AAA;
+	
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+}
+.gamePreview_controlSettings:hover{
+	text-shadow: 0 0 10px #FFF;
+}
+
+.gamePreview{
+	background-color: rgba(0,0,0,0.5);
+	outline: 1px solid #AAA;
+	box-shadow: 0px 0px 20px #FFF;
+	font-weight: normal;
+	color: #0F0;
+	
+	text-shadow: 0px 0px 5px #0F0, 0px 0px 5px #0F0;
+	overflow: hidden;
+	
+	padding: 5px;
+	margin: 10px;
+}
+.gamePreview:hover{
+	
+}
+.gamePreview:hover .gamePreview_thumb{
+	display: none;
+}
+.gamePreview:hover .gamePreview_thumbAnim{
+	display: block;
+}
+
+.gamePreview hr{
+	border: none;
+	outline: none;
+	background-color: #AFA;
+	height: 2px;
+}
