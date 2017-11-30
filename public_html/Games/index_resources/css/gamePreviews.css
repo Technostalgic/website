@@ -56,19 +56,78 @@
 }
 
 .gamePreview_controlContainer{
+	text-align: center;
 	position: relative;
 	display: block;
 	float: right;
+	border-left: 1px solid #AFA;
+	box-shadow: -10px 0px 20px -10px #FFF;
+	
+	min-width: 60px;
 	
 	height: 150px;
 	margin: 10px;
 }
 .gamePreview_controlPlay{
+	overflow: hidden;
+	background-color: #050;
+	color: #0F0;
+	font-size: 52px;
+	text-shadow: none;
+	border: 1px solid #0F0;
+	border-radius: 4px;
+	box-shadow: 0 0 10px #0F0;
 	
+	width: 50px;
+	height: 60px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.gamePreview_controlPlay:hover{
+	text-shadow: 0 0 10px #0F0;
 }
 .gamePreview_controlFavorite{
+	overflow: hidden;
+	background-color: #550;
+	color: #FF0;
+	text-shadow: none;
+	border: 1px solid #FF0;
+	border-radius: 4px;
+	line-height: 22px;
+	box-shadow: 0 0 10px #FF0;
+	
+	width: 20px;
+	height: 20px;
 	position: absolute;
 	bottom: 0;
+	left: 8px;
+	cursor: pointer;
+}
+.gamePreview_controlFavorite:hover{
+	text-shadow: 0 0 10px #FF0;
+}
+.gamePreview_controlSettings{
+	overflow: hidden;
+	background-color: #333;
+	font-weight: bold;
+	color: #AAA;
+	text-shadow: none;
+	border: 1px solid #AAA;
+	border-radius: 4px;
+	line-height: 25px;
+	box-shadow: 0 0 10px #AAA;
+	
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+}
+.gamePreview_controlSettings:hover{
+	text-shadow: 0 0 10px #FFF;
 }
 
 .gamePreview{
