@@ -5,7 +5,9 @@ class gpMetaData{
 		this.description = description;
 		if(keys) this.keys = keys;
 		if(thumb) this.createThumb(thumb);
+		else this.createThumb("default.gif");
 		if(thumbAnim) this.createThumbAnim(thumbAnim);
+		else this.thumbAnim = this.thumb;
 	}
 	
 	createThumb(src){
@@ -36,8 +38,7 @@ class gpMetaData{
 		gpControlContainer.innerHTML = '\
 			<div class="gamePreview_controlPlay">&#9658;</div>\
 			<div class="gamePreview_controlSettings">&#9881;</div>\
-			<div class="gamePreview_controlFavorite">&#9733;</div>\
-			';
+			<div class="gamePreview_controlFavorite">&#9733;</div>';
 		r.append(gpControlContainer);
 		
 		var gpTitle = document.createElement("span");
@@ -83,6 +84,14 @@ class gpMetaData{
 		r.keys = keys;
 		
 		return r;
+	}
+	static loadGamePreviewFromSource(src, callback){
+		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
+		$.ajax({
+			url: path + src + ".txt",
+			async: true,
+			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);}
+		});
 	}
 }
 
