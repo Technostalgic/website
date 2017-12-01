@@ -88,12 +88,13 @@ class gpMetaData{
 	static loadGamePreviewFromSource(src, callback){
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
 		$.ajax({
-			url: path + src + ".txt",
+			url: path + src + ".ini",
 			async: true,
 			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);}
 		});
 	}
 }
+
 
 function getRelativeHomePath(){
 	var src = document.baseURI;
@@ -105,6 +106,18 @@ function getRelativeHomePath(){
 	}
 	return ups + "/";
 }
+function loadAllGamePreviews(){
+	var loaders = document.getElementsByClassName("loadGamePreview");
+	for(var i = 0; i < loaders.length; i++){
+		var mdFileName = loaders[i].id.split('_')[1];
+		var loadFunc = function(data){
+			loaders[i].append(gpMetaData.fromString(data).createElement());
+		}
+		gpMetaData.loadGamePreviewFromSource(mdFileName, loadFunc);
+	}
+}
+loadAllGamePreviews();
+
 
 ///ex:
 //<div class="gamePreview">
