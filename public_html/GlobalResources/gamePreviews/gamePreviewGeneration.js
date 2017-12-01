@@ -49,12 +49,14 @@ class gpMetaData{
 		gpTitle.innerHTML = this.title;
 		r.append(gpTitle);
 		
-		if(this.keys.highScoreKey){
-			var gpHiScore = document.createElement("span");
-			gpHiScore.id = this.keys.highScoreKey;
-			gpHiScore.classList.add("gamePreview_highScore");
-			gpHiScore.innerHTML = "High Score: ";
-			r.append(gpHiScore);
+		if(this.keys){
+			if(this.keys.highScoreKey){
+				var gpHiScore = document.createElement("span");
+				gpHiScore.id = this.keys.highScoreKey;
+				gpHiScore.classList.add("gamePreview_highScore");
+				gpHiScore.innerHTML = "High Score: ";
+				r.append(gpHiScore);
+			}
 		}
 		
 		r.append(document.createElement("hr"));
@@ -68,8 +70,9 @@ class gpMetaData{
 	}
 	
 	static fromString(str){
-		var data = str.split('\n');
 		var r = new gpMetaData();
+		if((typeof str)[0] != 's') return r;
+		var data = str.split('\n');
 		var keys = {};
 		
 		for(var i = 0; i < data.length; i++){
@@ -93,18 +96,21 @@ class gpMetaData{
 		
 		var report =
 		$.ajax({
-			url: path + src + ".ini",
+			url: path + src + ".txt",
 			async: true,
-			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);}
-		}).status;
-		if(report == 404){
-			callback("");
-		}
+			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);},
+			error: !!callback ? callback : function(){}
+		});
 	}
 }
 
 function getRelativeHomePath(){
 	var src = document.baseURI;
+	
+	///FIX: Dont leave this sloppy check here
+	if(src[0].toUpperCase != 'F')
+		return "/";
+
 	var ups = "";
 	var splURI = src.split('/');
 	for(var i = splURI.length - 1; i >= 0; i--){
@@ -117,9 +123,10 @@ function loadAllGamePreviews(){
 	var loaders = document.getElementsByClassName("loadGamePreview");
 	for(var i = 0; i < loaders.length; i++){
 		loaders[i].innerHTML = "";
+		var loader = loaders[i];
 		var mdFileName = "gpMeta_" + loaders[i].id.split('_')[1];
 		var loadFunc = function(data){
-			loaders[i].append(gpMetaData.fromString(data).createElement());
+			loader.append(gpMetaData.fromString(data).createElement());
 		}
 		gpMetaData.loadGamePreviewFromSource(mdFileName, loadFunc);
 	}
