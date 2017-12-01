@@ -7,7 +7,7 @@ class gpMetaData{
 		if(thumb) this.createThumb(thumb);
 		else this.createThumb("default.gif");
 		if(thumbAnim) this.createThumbAnim(thumbAnim);
-		else this.thumbAnim = this.thumb;
+		else this.createThumbAnim();
 	}
 	
 	createThumb(src){
@@ -19,8 +19,11 @@ class gpMetaData{
 	createThumbAnim(src){
 		this.thumbAnim = new Image();
 		this.thumbAnim.classList.add("gamePreview_thumbAnim");
-		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/";
-		this.thumbAnim.src = path + src;
+		if(src){
+			var path = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/";
+			this.thumbAnim.src = path + src;
+		}
+		else this.thumbAnim.src = this.thumb.src;
 	}
 	
 	createElement(){
@@ -87,14 +90,18 @@ class gpMetaData{
 	}
 	static loadGamePreviewFromSource(src, callback){
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
+		
+		var report =
 		$.ajax({
 			url: path + src + ".ini",
 			async: true,
 			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);}
-		});
+		}).status;
+		if(report == 404){
+			callback("");
+		}
 	}
 }
-
 
 function getRelativeHomePath(){
 	var src = document.baseURI;
@@ -109,31 +116,13 @@ function getRelativeHomePath(){
 function loadAllGamePreviews(){
 	var loaders = document.getElementsByClassName("loadGamePreview");
 	for(var i = 0; i < loaders.length; i++){
-		var mdFileName = loaders[i].id.split('_')[1];
+		loaders[i].innerHTML = "";
+		var mdFileName = "gpMeta_" + loaders[i].id.split('_')[1];
 		var loadFunc = function(data){
 			loaders[i].append(gpMetaData.fromString(data).createElement());
 		}
 		gpMetaData.loadGamePreviewFromSource(mdFileName, loadFunc);
 	}
 }
-loadAllGamePreviews();
 
-
-///ex:
-//<div class="gamePreview">
-//	<div class="gamePreview_thumbContainer">
-//		<img class="gamePreview_thumb" src="./index_resources/tubetris_thumb.png">
-//		<img class="gamePreview_thumbAnim" src="./index_resources/tubetris_thumbAnim.gif">
-//	</div>
-//	<div class="gamePreview_controlContainer">
-//		<div class="gamePreview_controlPlay">&#9658;</div>
-//		<div class="gamePreview_controlSettings">&#9881;</div>
-//		<div class="gamePreview_controlFavorite">&#9733;</div>
-//	</div>
-//	<span class="gamePreview_title">Tubetris</span>
-//	<span id="technostalgic_Tubetris_highScore" class="gamePreview_highScore">High Score: N/A <hr /></span>
-//	<span class="gamePreview_description">
-//		A Tetris remix that borrows gameplay elements inspired from the game 'Pipe Dream';
-//		two classics mashed together to create an entirely new experience.
-//	</span>
-//</div>
+window.addEventListener("load", loadAllGamePreviews);
