@@ -93,10 +93,11 @@ class gpMetaData{
 	}
 	static loadGamePreviewFromSource(src, callback){
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
-		
+		console.log( path + src + ".txt");
 		var report =
 		$.ajax({
 			url: path + src + ".txt",
+			dataType: "text",
 			async: true,
 			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);},
 			error: !!callback ? callback : function(){}
@@ -108,7 +109,7 @@ function getRelativeHomePath(){
 	var src = document.baseURI;
 	
 	///FIX: Dont leave this sloppy check here
-	if(src[0].toUpperCase != 'F')
+	if(src[0].toUpperCase() != 'F')
 		return "/";
 
 	var ups = "";
@@ -121,15 +122,34 @@ function getRelativeHomePath(){
 }
 function loadAllGamePreviews(){
 	var loaders = document.getElementsByClassName("loadGamePreview");
+	var cbdrs = [];
 	for(var i = 0; i < loaders.length; i++){
 		loaders[i].innerHTML = "";
 		var loader = loaders[i];
 		var mdFileName = "gpMeta_" + loaders[i].id.split('_')[1];
-		var loadFunc = function(data){
-			loader.append(gpMetaData.fromString(data).createElement());
-		}
-		gpMetaData.loadGamePreviewFromSource(mdFileName, loadFunc);
+		var cbdr = 
+		new callbackDereferencer(function(vp, data){
+			console.log(data);
+			vp.appendChild(gpMetaData.fromString(data).createElement());
+		}, loader, mdFileName);
+		cbdrs.push(cbdr);
+	}
+	for(var i = 0; i < cbdrs.length; i++)
+		cbdrs[i].setCall();
+}
+
+class callbackDereferencer{
+	constructor(func, varParam, mdFileName){
+		this.func = func;
+		this.varParam = varParam;
+		this.mdFileName = mdFileName;
+	}
+	
+	setCall(){
+		var v = this;
+		gpMetaData.loadGamePreviewFromSource(this.mdFileName, function(data){ v.func(v.varParam, data); });
 	}
 }
+
 
 window.addEventListener("load", loadAllGamePreviews);
