@@ -9,12 +9,16 @@ class gpMetaData{
 		if(thumbAnim) this.createThumbAnim(thumbAnim);
 		else this.createThumbAnim();
 	}
-	
 	createThumb(src){
 		this.thumb = new Image();
 		this.thumb.classList.add("gamePreview_thumb");
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/";
 		this.thumb.src = path + src;
+		
+		var tthumb = this.thumb;
+		tthumb.onerror = function(){
+			tthumb.src = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/default.gif";
+		}
 	}
 	createThumbAnim(src){
 		this.thumbAnim = new Image();
@@ -24,6 +28,11 @@ class gpMetaData{
 			this.thumbAnim.src = path + src;
 		}
 		else this.thumbAnim.src = this.thumb.src;
+		
+		var tthumb = this.thumbAnim;
+		tthumb.onerror = function(){
+			tthumb.src = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/default.gif";
+		}
 	}
 	
 	createElement(){
@@ -32,22 +41,22 @@ class gpMetaData{
 		
 		var gpThumbContainer = document.createElement("div");
 		gpThumbContainer.classList.add("gamePreview_thumbContainer");
-		if(this.thumb) gpThumbContainer.append(this.thumb);
-		if(this.thumbAnim) gpThumbContainer.append(this.thumbAnim);
-		r.append(gpThumbContainer);
+		if(this.thumb) gpThumbContainer.appendChild(this.thumb);
+		if(this.thumbAnim) gpThumbContainer.appendChild(this.thumbAnim);
+		r.appendChild(gpThumbContainer);
 		
 		var gpControlContainer = document.createElement("div");
 		gpControlContainer.classList.add("gamePreview_controlContainer");
 		gpControlContainer.innerHTML = '\
 			<div class="gamePreview_controlPlay">&#9658;</div>\
 			<div class="gamePreview_controlSettings">&#9881;</div>\
-			<div class="gamePreview_controlFavorite">&#9733;</div>';
-		r.append(gpControlContainer);
+			<div class="gamePreview_controlFavorite">&#9733;</div> ';
+		r.appendChild(gpControlContainer);
 		
 		var gpTitle = document.createElement("span");
 		gpTitle.classList.add("gamePreview_title");
 		gpTitle.innerHTML = this.title;
-		r.append(gpTitle);
+		r.appendChild(gpTitle);
 		
 		if(this.keys){
 			if(this.keys.highScoreKey){
@@ -55,16 +64,16 @@ class gpMetaData{
 				gpHiScore.id = this.keys.highScoreKey;
 				gpHiScore.classList.add("gamePreview_highScore");
 				gpHiScore.innerHTML = "High Score: ";
-				r.append(gpHiScore);
+				r.appendChild(gpHiScore);
 			}
 		}
 		
-		r.append(document.createElement("hr"));
+		r.appendChild(document.createElement("hr"));
 		
 		var gpDescription = document.createElement("span");
 		gpDescription.classList.add("gamePreview_description");
 		gpDescription.innerHTML = this.description;
-		r.append(gpDescription);
+		r.appendChild(gpDescription);
 		
 		return r;
 	}
@@ -93,7 +102,6 @@ class gpMetaData{
 	}
 	static loadGamePreviewFromSource(src, callback){
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
-		console.log( path + src + ".txt");
 		var report =
 		$.ajax({
 			url: path + src + ".txt",
@@ -108,14 +116,14 @@ class gpMetaData{
 function getRelativeHomePath(){
 	var src = document.baseURI;
 	
-	///FIX: Dont leave this sloppy check here
+	// FIX: Dont leave this sloppy check here
 	if(src[0].toUpperCase() != 'F')
 		return "/";
 
 	var ups = "";
 	var splURI = src.split('/');
 	for(var i = splURI.length - 1; i >= 0; i--){
-		if(splURI[i] == "public_html") break;
+		if(splURI[i] === "public_html") break;
 		ups += ".";
 	}
 	return ups + "/";
@@ -129,7 +137,6 @@ function loadAllGamePreviews(){
 		var mdFileName = "gpMeta_" + loaders[i].id.split('_')[1];
 		var cbdr = 
 		new callbackDereferencer(function(vp, data){
-			console.log(data);
 			vp.appendChild(gpMetaData.fromString(data).createElement());
 		}, loader, mdFileName);
 		cbdrs.push(cbdr);

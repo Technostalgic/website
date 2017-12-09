@@ -1,0 +1,8 @@
+title=Hopper
+type:web
+highScoreKey=technostalgic_hopper_highscore
+controlsKey=technostalgic_hopper_controls
+configKey=technostalgic_hopper_config
+description=Submitted for LD38, ranked 14th in "Fun". A simple, arcade-style, gravity-based shooter featuring orbital mechanics and accidentally jumping too far.
+thumb=hopper_thumb.png
+thumbAnim=hopper_thumbAnim.gif

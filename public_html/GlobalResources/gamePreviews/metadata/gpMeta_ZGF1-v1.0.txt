@@ -1,0 +1,7 @@
+title=Zero Gravity Free Run
+type=download
+os=Windows
+highScoreKey=technostalgic_ZGF1_highscore
+description=Submitted for LD27, ranked 20th in "Fun". A fast-paced action platformer where you have to run on the ground, walls, and ceiling, to reach the end of the level in 10 seconds or under.
+thumb=ZGF1_thumb.png
+thumbAnim=ZGF1_thumbAnim.gif

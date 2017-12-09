@@ -1,4 +1,5 @@
 title=Tubetris
+type:web
 highScoreKey=technostalgic_tubetris_highscore
 controlsKey=technostalgic_tubetris_controls
 configKey=technostalgic_tubetris_config

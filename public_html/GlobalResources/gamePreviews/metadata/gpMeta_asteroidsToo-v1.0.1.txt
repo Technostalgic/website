@@ -1,0 +1,7 @@
+title=Asteroids Too
+type=download
+os=Windows, (Source)
+highScoreKey=technostalgic_asteroidsToo_highscore
+description=The classic arcade game "Asteroids", but in endless survival mode, with new weapons, more enemies, and modern gameplay mechanics.
+thumb=asteroidsToo_thumb.png
+thumbAnim=asteroidsToo_thumbAnim.gif
