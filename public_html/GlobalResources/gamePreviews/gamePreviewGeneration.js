@@ -48,9 +48,9 @@ class gpMetaData{
 		var gpControlContainer = document.createElement("div");
 		gpControlContainer.classList.add("gamePreview_controlContainer");
 		gpControlContainer.innerHTML = '\
-			<div class="gamePreview_controlPlay">&#9658;</div>\
-			<div class="gamePreview_controlSettings">&#9881;</div>\
-			<div class="gamePreview_controlFavorite">&#9733;</div> ';
+			<a href="' + this.playLink + '" class="gamePreview_controlPlay">&#9658;</a>\
+			<a href="' + this.playLink + '" class="gamePreview_controlSettings">&#9881;</a>\
+			<a href="' + this.playLink + '" class="gamePreview_controlFavorite">&#9733;</a> ';
 		r.appendChild(gpControlContainer);
 		
 		var gpTitle = document.createElement("span");
@@ -94,6 +94,7 @@ class gpMetaData{
 				case "description": r.description = spldat[1]; break;
 				case "thumb": r.createThumb(spldat[1]); break;
 				case "thumbAnim": r.createThumbAnim(spldat[1]); break;
+				case "playLink": r.playLink = spldat[1]; break;
 			}
 		}
 		r.keys = keys;

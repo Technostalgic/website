@@ -73,6 +73,7 @@
 	background-color: #050;
 	color: #0F0;
 	font-size: 52px;
+	text-decoration: none;
 	text-shadow: none;
 	border: 1px solid #0F0;
 	border-radius: 4px;
@@ -92,6 +93,7 @@
 	overflow: hidden;
 	background-color: #550;
 	color: #FF0;
+	text-decoration: none;
 	text-shadow: none;
 	border: 1px solid #FF0;
 	border-radius: 4px;
@@ -113,6 +115,7 @@
 	background-color: #333;
 	font-weight: bold;
 	color: #AAA;
+	text-decoration: none;
 	text-shadow: none;
 	border: 1px solid #AAA;
 	border-radius: 4px;

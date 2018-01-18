@@ -6,3 +6,5 @@ configKey=technostalgic_hopper_config
 description=Submitted for LD38, ranked 14th in "Fun". A simple, arcade-style, gravity-based shooter featuring orbital mechanics and accidentally jumping too far.
 thumb=hopper_thumb.png
 thumbAnim=hopper_thumbAnim.gif
+link=./gamePages/hopper/index.html
+playLink=hopper/index.html
