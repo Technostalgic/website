@@ -1,0 +1,70 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+#docIndex{
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	width: 300px;
+	top: 0;
+	float: top;
+	margin-left: 5px;
+	
+	border-right: 2px solid black;
+}
+#libDocs{
+	display: inline-block;
+	height: 100%;
+	width: calc(100% - 310px);
+	padding: 0;
+	margin: 0;
+	float: right;
+	
+	border: none;
+}
+
+#docIndex h1{
+	margin-bottom: 0;
+	
+	background-color: #ccc;
+	font-size: 20px;
+}
+#docIndex ul{
+	margin-top: 0;
+	
+	background-color: #eee;
+}
+
+.back{
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	
+	font-size: 12px;
+}
+.githubLink{
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	bottom: 0;
+	
+	font-weight: bold;
+	text-align: center;
+}
+.githubLink a{
+	display: inline-block;
+	padding: 0 5px;
+	padding-bottom: 20px;
+	
+	border: 2px solid black;
+	border-bottom: none;
+	background-color: rgb(198, 228, 139);
+	color: rgb(25,97,39);
+	text-decoration: none;
+}
+.githubLink a:hover{
+	text-decoration: underline;
+}

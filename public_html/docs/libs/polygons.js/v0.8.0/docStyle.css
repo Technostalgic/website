@@ -1,0 +1,61 @@
+body{
+	font-family: sans-serif;
+	color: #777;
+}
+
+.afmDiv div{
+	padding-left: 20px;
+	
+	background-color: #eee;
+}
+.afmContents{
+	padding-top: 20px;
+	background-color: #fff;
+}
+.afmContents ul{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 50px;
+	padding-bottom: 20px;
+	background-color: #ddd;
+}
+
+.afmContentsHeader{
+	display: block;
+	padding-left: 20px;
+	
+	font-weight: bold;
+	color: #000;
+	font-size: 18px;
+	background-color: #bbb;
+}
+.afmMainDivider{
+	padding-left: 10px;
+	display: block;
+	margin-top: 40px;
+	background-color: #ccc;
+	
+	font-weight: bold;
+	color: #000;
+	font-size: 28px;
+}
+.afmSubDivider{
+	font-weight: bold;
+	display: block;
+	margin-top: 10px;
+	
+	color: #00c;
+}
+.afmCategory{
+	color: #555;
+	font-weight: bold;
+}
+
+.afmNotice{
+	color: #D00;
+	font-size: 14px;
+}
+.afmInBrackets{
+	color: #0bb;
+	font-weight: normal;
+}
