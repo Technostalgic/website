@@ -102,15 +102,21 @@ class gpMetaData{
 	}
 	static loadGamePreviewFromSource(src, callback){
 		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/metadata/";
-		var report =
+		var fullpath = path + src + ".txt"
+		var report = 
 		$.ajax({
-			url: path + src + ".txt",
+			url: fullpath,
 			dataType: "text",
 			async: true,
 			success: !!callback ? callback : function(data){this.element = gpMetaData.fromString(data);},
-			error: !!callback ? callback : function(){}
+			error: function(data){ callback(data); console.log(data); }
 		});
 	}
+	
+	// FIX: make metadata load from iframe instead of ajax
+	//static loadGPMetaData(src){
+	//	var ifrm = document.createElement()
+	//}
 }
 
 function getRelativeHomePath(){
@@ -154,8 +160,8 @@ class callbackDereferencer{
 	}
 	
 	setCall(){
-		var v = this;
-		gpMetaData.loadGamePreviewFromSource(this.mdFileName, function(data){ v.func(v.varParam, data); });
+		var ths = this;
+		gpMetaData.loadGamePreviewFromSource(this.mdFileName, function(data){ ths.func(ths.varParam, data); });
 	}
 }
 
