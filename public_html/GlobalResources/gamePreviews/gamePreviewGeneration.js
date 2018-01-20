@@ -1,4 +1,3 @@
-
 class gpMetaData{
 	constructor(title = "default", description = "default description", keys = null, thumb = null, thumbAnim = null){
 		this.title = title;
@@ -117,17 +116,18 @@ class gpMetaData{
 function getRelativeHomePath(){
 	var src = document.baseURI;
 	
-	// FIX: Dont leave this sloppy check here
-	if(src[0].toUpperCase() != 'F')
+	if(window.location.protocol.toUpperCase() != "FILE:")
 		return "/";
 
 	var ups = "";
 	var splURI = src.split('/');
-	for(var i = splURI.length - 1; i >= 0; i--){
+	if(splURI.length <= 2) return "./";
+	
+	for(var i = splURI.length - 2; i >= 0; i--){
 		if(splURI[i] === "public_html") break;
-		ups += ".";
+		ups += "../";
 	}
-	return ups + "/";
+	return ups;
 }
 function loadAllGamePreviews(){
 	var loaders = document.getElementsByClassName("loadGamePreview");
