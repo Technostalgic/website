@@ -46,10 +46,11 @@ class gpMetaData{
 		
 		var gpControlContainer = document.createElement("div");
 		gpControlContainer.classList.add("gamePreview_controlContainer");
+		console.log(this);
 		gpControlContainer.innerHTML = '\
 			<a href="' + this.playLink + '" class="gamePreview_controlPlay">&#9658;</a>\
 			<a href="' + this.playLink + '" class="gamePreview_controlSettings">&#9881;</a>\
-			<a href="' + this.playLink + '" class="gamePreview_controlFavorite">&#9733;</a> ';
+			<a href="' + this.playLink + '" class="gamePreview_controlFavorite">&#9733;</a>';
 		r.appendChild(gpControlContainer);
 		
 		var gpTitle = document.createElement("span");
@@ -83,6 +84,7 @@ class gpMetaData{
 		var data = str.split('\n');
 		var keys = {};
 		
+		console.log(data);
 		for(var i = 0; i < data.length; i++){
 			var spldat = data[i].split('=');
 			switch(spldat[0]){

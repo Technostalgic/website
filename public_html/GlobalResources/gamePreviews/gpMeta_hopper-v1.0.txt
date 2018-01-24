@@ -7,4 +7,4 @@ description=Submitted for LD38, ranked 14th in "Fun". A simple, arcade-style, gr
 thumb=hopper_thumb.png
 thumbAnim=hopper_thumbAnim.gif
 link=/embed/hopper/v1.0/index.html
-playLink=/embed/hopper/v1.0/index.html
+playLink=/embed/hopper/index.html
