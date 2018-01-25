@@ -1,0 +1,26 @@
+releases
+	v1.0 release - mar 14, 2017
+	v1.1 release - mar 25, 2017
+
+additions
+	added arrow indicators to make suggestions for where to drop the ball (only visible when ball is falling)
+	added "warning: storage disabled" menu screen
+	added user interface for changing keybinding
+	added two new control functions "rotate cc" & "quick drop"
+	added splash text that tells you how many points you've totalled after each ball
+	added bonus ball that spawns after each time you score more than 750 points with a single ball
+	added interactive tutorial
+	added mouse(dragging) and touchscreen controls
+
+changes
+	"bonus" piece: changed from triple quad+ball tile sandwich to single quad tile piece
+	"bomb" piece: changed functionality from having to be detonated by a ball or another bomb to automatically detonating when placed
+	up key now rotates clockwise by default, instead of counter clockwise
+	removed barely readable "how to play" section and replaced it with an interactive tutorial
+	when navigating menus, mouse click will now only select if the mouse is over an option
+	forced the defaultly selected menu item on the pause screen to be "RESUME" so you don't accidentally quit your session (thanks to itch.io user "gileri")
+	
+bug fixes
+	fixed a bug where "level up" sound played even when sound was supposedly muted (thanks to reddit users u/blahblah & u/JustALittleWeird)
+	fixed a fatal error where the game wouldn't load if cookies and local storage was disabled in the browser settings (thanks to irc freenode server user "knod", on "#gamedev" channel)
+	fixed a bug where the ball woudl sometimes never run out of momentum and keep rolling back and forth (thanks to reddit user u/Dasguudmane)

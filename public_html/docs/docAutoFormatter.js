@@ -16,7 +16,7 @@ function formatDocContent(e){
 	
 	var docStyle = document.createElement("link");
 	docStyle.setAttribute("rel", "styleSheet");
-	docStyle.setAttribute("href", "../../../../docStyle.css");
+	docStyle.setAttribute("href", "/docStyle.css");
 	docsDoc.contentDocument.head.appendChild(docStyle);
 	
 	docsDoc.contentDocument.body.appendChild(bod.data);
