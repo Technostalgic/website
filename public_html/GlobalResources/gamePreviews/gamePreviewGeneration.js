@@ -11,7 +11,7 @@ class gpMetaData{
 	createThumb(src){
 		this.thumb = new Image();
 		this.thumb.classList.add("gamePreview_thumb");
-		var path = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/";
+		var path = "/GlobalResources/gamePreviews/thumbnails/";
 		this.thumb.src = path + src;
 		
 		var tthumb = this.thumb;
@@ -23,7 +23,7 @@ class gpMetaData{
 		this.thumbAnim = new Image();
 		this.thumbAnim.classList.add("gamePreview_thumbAnim");
 		if(src){
-			var path = getRelativeHomePath() + "GlobalResources/gamePreviews/thumbnails/";
+			var path = "/GlobalResources/gamePreviews/thumbnails/";
 			this.thumbAnim.src = path + src;
 		}
 		else this.thumbAnim.src = this.thumb.src;
@@ -122,20 +122,7 @@ class gpMetaData{
 }
 
 function getRelativeHomePath(){
-	var src = document.baseURI;
-	
-	if(window.location.protocol.toUpperCase() != "FILE:")
-		return "/";
-
-	var ups = "";
-	var splURI = src.split('/');
-	if(splURI.length <= 2) return "./";
-	
-	for(var i = splURI.length - 2; i >= 0; i--){
-		if(splURI[i] === "public_html") break;
-		ups += "../";
-	}
-	return ups;
+	return '/';
 }
 function loadAllGamePreviews(){
 	var loaders = document.getElementsByClassName("loadGamePreview");

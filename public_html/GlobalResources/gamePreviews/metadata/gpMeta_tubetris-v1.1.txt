@@ -1,8 +1,10 @@
 title=Tubetris
-type:web
+type=web
 highScoreKey=technostalgic_tubetris_highscore
 controlsKey=technostalgic_tubetris_controls
 configKey=technostalgic_tubetris_config
 description=A Tetris remix that borrows gameplay elements inspired from the game 'Pipe Dream'; two classics mashed together to create an entirely new experience.
-thumb=tubetris_thumb.png
+thumb=tubetris_thumb.gif
 thumbAnim=tubetris_thumbAnim.gif
+link=/embed/Tubetris/v1.1/index.html
+playLink=/embed/Tubetris/v1.1/index.html
